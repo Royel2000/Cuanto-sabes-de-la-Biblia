@@ -5,7 +5,7 @@
 <div align="center">
 <br>
   <a href="#instalación"><kbd> Instalación </kbd></a>&ensp;&ensp;
-  <a href="#acerca de"><kbd> Acerca de </kbd></a>
+  <a href="#acerca-de"><kbd> Acerca de </kbd></a>
 </div><br>
 # ¿Cuánto Sabes de la Biblia?
 Esta es una aplicación de preguntas bíblicas desarrollada con tecnología web (React js)
