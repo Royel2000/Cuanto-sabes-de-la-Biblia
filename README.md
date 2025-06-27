@@ -68,7 +68,7 @@ Este proyecto fue construido con:
 
 | Inicio | Pregunta | Comodines | Resultados |
 |:------:|:--------:|:---------:|:----------:|
-| ![](./public/Screenshots/MainPage.png) | ![](./public/Screenshots/Pregunta.png) | ![](./public/Screenshots/Comodin.png) | ![](./public/Screenshots/Results.png) |
+| ![](./public/Screenshots/MainPage.png) | ![](./public/Screenshots/Pregunta.png) | ![](./public/Screenshots/Comodines.png) | ![](./public/Screenshots/Resultados.png) |
 
 ### 🙋‍♂️ Autor
 
