@@ -1,8 +1,51 @@
-# React + Vite
+<h3 align="center">
+<img align="center" width="80%" src="./public/Screenshots/MainPage.png" />
+</h3>
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+<div align="center">
+<br>
+  <a href="#instalación"><kbd> Instalación </kbd></a>&ensp;&ensp;
+  <a href="#acerca de"><kbd> Acerca de </kbd></a>
+</div><br>
+# ¿Cuánto Sabes de la Biblia?
+Esta es una aplicación de preguntas bíblicas desarrollada con tecnología web (React js)
 
-Currently, two official plugins are available:
+### Acerca de
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Características:
+- Clasificación de preguntas
+	- Antiguo testamento
+	- Nuevo Testamento
+	- Nivel Experto
+- Comodines
+	- 50/50
+	- Qué dice el público
+	- Referencia bíblica
+- Temporizador por pregunta (15 s)
+- Basada en la Biblia RV-1960
+- Animaciones fluidas entre páginas
+- Tema oscuro y claro
+
+### Instalación
+
+> descarga desde la rama Máster
+```bash
+git clone --depth=1 https://github.com/Royel2000/Cuanto-sabes-de-la-Biblia.git
+cd Cuanto-sabes-de-la-Biblia
+```
+
+>Instalación de dependencias
+```bash
+npm init
+```
+
+>Ejecución 
+```bash
+npm run dev
+```
+# Desarrollado con:
+
+- Vite
+- React js
+- Tailwind
+- Motion Framer
