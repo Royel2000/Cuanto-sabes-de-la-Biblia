@@ -1,51 +1,78 @@
-<h3 align="center">
-<img align="center" width="80%" src="./public/Screenshots/MainPage.png" />
-</h3>
+<h1 align="center">📖 ¿Cuánto Sabes de la Biblia?</h1>
+
+<p align="center">
+  <img src="./public/Screenshots/MainPage.png" width="80%" alt="Portada del juego" />
+</p>
 
 <div align="center">
-<br>
-  <a href="#instalación"><kbd> Instalación </kbd></a>&ensp;&ensp;
-  <a href="#acerca-de"><kbd> Acerca de </kbd></a>
-</div><br>
-# ¿Cuánto Sabes de la Biblia?
-Esta es una aplicación de preguntas bíblicas desarrollada con tecnología web (React js)
+  <a href="#-instalación"><kbd>📦 Instalación</kbd></a> &nbsp;|&nbsp;
+  <a href="#-acerca-de"><kbd>📖 Acerca de</kbd></a> &nbsp;|&nbsp;
+  <a href="#-tecnologías"><kbd>🛠️ Tecnologías</kbd></a>
+</div>
 
-### Acerca de
+---
 
-Características:
-- Clasificación de preguntas
-	- Antiguo testamento
-	- Nuevo Testamento
-	- Nivel Experto
-- Comodines
-	- 50/50
-	- Qué dice el público
-	- Referencia bíblica
-- Temporizador por pregunta (15 s)
-- Basada en la Biblia RV-1960
-- Animaciones fluidas entre páginas
-- Tema oscuro y claro
+### 📖 Acerca de
 
-### Instalación
+**¿Cuánto Sabes de la Biblia?** es una aplicación web de trivia bíblica basada en la versión **Reina-Valera 1960**, diseñada para poner a prueba tus conocimientos de una forma divertida e interactiva.
 
-> descarga desde la rama Máster
+#### Características principales:
+
+- ✅ Clasificación temática:
+  - Antiguo Testamento
+  - Nuevo Testamento
+  - Nivel experto
+- 🧩 Comodines disponibles:
+  - 50/50
+  - ¿Qué dice el público?
+  - Referencia bíblica
+- ⏳ Temporizador de 15 segundos por pregunta
+- 🌑 Soporte para tema claro/oscuro
+- ⚡ Animaciones fluidas con Framer Motion
+- 📊 Barra de progreso visual por nivel
+- 🎵 Efectos de sonido dinámicos
+
+---
+
+### 📦 Instalación
+
+#### Clona el repositorio:
+
 ```bash
 git clone --depth=1 https://github.com/Royel2000/Cuanto-sabes-de-la-Biblia.git
 cd Cuanto-sabes-de-la-Biblia
 ```
 
->Instalación de dependencias
+Instala las dependencias:
 ```bash
-npm init
+npm install
 ```
 
->Ejecución 
+Ejecuta el proyecto en desarrollo:
+
 ```bash
 npm run dev
 ```
-# Desarrollado con:
+    ⚠️ Asegúrate de tener Node.js ≥ 16 instalado.
 
-- Vite
-- React js
-- Tailwind
-- Motion Framer
+### 🛠️ Tecnologías
+
+Este proyecto fue construido con:
+
+- ⚛️ React
+- 🌀 Tailwind CSS
+- 🎬 Framer Motion
+- ⚡ Vite como bundler ultrarrápido
+
+### 📸 Capturas
+
+| Inicio | Pregunta | Comodines | Resultados |
+|:------:|:--------:|:---------:|:----------:|
+| ![](./public/Screenshots/MainPage.png) | ![](./public/Screenshots/Pregunta.png) | ![](./public/Screenshots/Comodin.png) | ![](./public/Screenshots/Results.png) |
+
+### 🙋‍♂️ Autor
+
+Desarrollado con ❤️ por @Royel2000
+
+### 📜 Licencia
+Este proyecto está bajo la licencia MIT
