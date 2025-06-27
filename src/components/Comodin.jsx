@@ -50,14 +50,14 @@ const Comodin = ({ filteredQuestion, answers }) => {
     <>
       <Modal open={isOpen} onClose={handleClose}>
         <motion.div
-          className="flex items-center"
+          className="flex justify-center transition-all"
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -30 }}
           transition={{ duration: 0.3 }}
         >
-          <div className="text-center px-10 py-2 sm:text-left">
-            <h3 className="text-2xl font-semibold dark:text-zinc-300">
+          <div className="text-center px-10 py-2">
+            <h3 className="text-xl sm:text-2xl font-semibold dark:text-zinc-300">
               Comodín:{" "}
               {activeType === "biblia"
                 ? "Biblia"
@@ -66,12 +66,12 @@ const Comodin = ({ filteredQuestion, answers }) => {
                 : "Público"}
             </h3>
 
-            <div className="mt-4 dark:text-zinc-400 text-xl font-normal tracking-wide">
+            <div className="sm:mt-4 dark:text-zinc-400 sm:text-xl font-normal">
               {activeType === "biblia" && <p>{filteredQuestion.bible}</p>}
 
               {activeType === "cincuenta" && (
                 <div>
-                  <div className="sm:flex">
+                  <div className="flex flex-col sm:flex-row justify-center items-center transition-all">
                     {[
                       filteredQuestion.correct_answer,
                       filteredQuestion.incorrect_answers[0],
@@ -86,17 +86,14 @@ const Comodin = ({ filteredQuestion, answers }) => {
                       </button>
                     ))}
                   </div>
-                  <p className="dark:text-zinc-200 text-xl font-mono mt-3">
-                    Posibles respuestas
-                  </p>
                 </div>
               )}
 
               {activeType === "publico" && (
-                <div className="w-80 my-3">
+                <div className="w-60 sm:w-72 md:w-96 sm:my-3 transition-all">
                   {answers.map((answer, i) => (
                     <div key={i}>
-                      <button className="p-5 justify-center items-center w-full">
+                      <button className="p-5 justify-center w-full">
                         <p className="font-bold text-md">
                           {answer}
                         </p>
@@ -111,11 +108,11 @@ const Comodin = ({ filteredQuestion, answers }) => {
         </motion.div>
       </Modal>
 
-      <div className="flex flex-col justify-center shadow-lg backdrop-blur rounded-xl border dark:border-zinc-900 dark:bg-zinc-950 dark:bg-opacity-[50%] md:h-[600px] p-10 dark:text-white transition-all duration-1000">
+      <div className="flex flex-col justify-center shadow-lg backdrop-blur rounded-xl border dark:border-zinc-800 dark:bg-zinc-800 dark:bg-opacity-[50%] md:h-[600px] p-10 dark:text-white transition-all duration-1000">
         {comodines.map((btn) => (
           <motion.button
             key={btn.id}
-            className="hover:translate-x-3 transition-all duration-1000 font-semibold dark:text-stone-100 mt-2 p-3 
+            className="hover:translate-x-3 transition-all duration-1000 font-semibold dark:text-stone-100 mt-2 p-3
               dark:hover:bg-zinc-800 hover:bg-zinc-100 rounded-xl flex items-center justify-center gap-2"
             whileHover={{ scale: 1.05 }}
             onClick={btn.action}
