@@ -6,7 +6,7 @@ import Instructions from "./pages/Instructions";
 
 const AppRouter = () => {
   return (
-    <div class="h-auto md:h-screen bg-white bg-gradient-to-bl dark:from-slate-950 dark:to-black transition-all duration-1000">
+    <div class="">
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />

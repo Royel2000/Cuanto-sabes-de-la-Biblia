@@ -2,7 +2,7 @@ import AppRouter from "./AppRouter";
 
 function App() {
   return (
-    <div className="h-auto lg:h-screen bg-white dark:bg-zinc-800 transition-all duration-1000">
+    <div className="h-[100vh] bg-white bg-gradient-to-bl dark:from-slate-900 dark:to-black transition-all duration-1000">
       <AppRouter />
     </div>
   );

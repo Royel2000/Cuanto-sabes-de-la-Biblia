@@ -5,7 +5,7 @@
 <div align="center">
   <a href="#-instalación"><kbd>📦 Instalación</kbd></a> &nbsp;|&nbsp;
   <a href="#-acerca-de"><kbd>📖 Acerca de</kbd></a> &nbsp;|&nbsp;
-  <a href="#-tecnologías"><kbd>🛠️ Tecnologías</kbd></a>
+  <a href="#-tecnologías"><kbd>🛠️ Tecnologías</kbd></a> &nbsp;|&nbsp;
 </div>
 
 ---
@@ -74,3 +74,8 @@ Desarrollado con ❤️ por @Royel2000
 
 ### 📜 Licencia
 Este proyecto está bajo la licencia MIT
+
+## Tareas por hacer
+- [ ] Crear aplicación de escritorio
+- [ ] Crear control remoto
+- [ ] Integrar base de datos MySQL o SQLite
