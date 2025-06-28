@@ -116,9 +116,9 @@ const Question = ({
                 >
                   <img
                     src={` ${
-                      (score / questionFiltered.length) * 100 <= 50
+                      (score / questionFiltered.length) * 100 <= 90
                         ? "/assets/video/gameover.gif"
-                        : ""
+                        : "/assets/video/Winner.gif"
                     } `}
                     alt=""
                   />

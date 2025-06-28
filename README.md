@@ -1,7 +1,7 @@
 <h1 align="center">📖 ¿Cuánto Sabes de la Biblia?</h1>
 
 <p align="center">
-  <img src="./public/Screenshots/MainPage.png" width="80%" alt="Portada del juego" />
+  <img src="./public/Screenshots/Portada.png" width="80%" alt="Portada del juego" />
 </p>
 
 <div align="center">
