@@ -10,7 +10,7 @@ const Instructions = () => {
       transition={{ duration: 0.5, ease: "easeOut" }}
     >
       <div className="mx-10 mt-10">
-        <div className="border border-zinc-900 rounded-xl bg-zinc-950 backdrop-blur-[20px] text-white shadow-2xl shadow-slate-900">
+        <div className="border dark:border-zinc-900 rounded-xl bg-zinc-100 dark:bg-zinc-950 dark:bg-opacity-[30%] backdrop-blur-[20px] text-white dark:shadow-2xl dark:shadow-slate-900">
           <TopButtons />
           <div className="container">
             <div class="relative max-w-5xl mx-auto pt-20 sm:pt-24 lg:pt-32">
@@ -41,23 +41,23 @@ const Instructions = () => {
                 Instrucciones
               </motion.h1>
               <motion.div
-                className="text-justify font-bold text-xl text-slate-500 mb-32"
+                className="text-justify font-bold text-xl dark:text-zinc-500 mb-32"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.6, duration: 0.5 }}
               >
-                <h2 className="dark:text-slate-200 text-zinc-700">Preguntas</h2>
+                <h2 className="dark:text-zinc-400 text-zinc-700">Preguntas</h2>
                 <p>
                   15 preguntas a responder,
                   <br /> 4 respuestas por cada pregunta
                   <br /> de las cuales solo una es correcta
                 </p>
-                <h2 className="dark:text-slate-200 text-zinc-700">Comodines</h2>
+                <h2 className="dark:text-zinc-400 text-zinc-700">Comodines</h2>
                 <p>
                   Los comodines son muy utiles <br /> en momentos en donde
                   necesitas reafirmar tus conocimientos
                 </p>
-                <h2 className="dark:text-slate-200 text-zinc-700">Puntaje</h2>
+                <h2 className="dark:text-zinc-400 text-zinc-700">Puntaje</h2>
                 <p>
                   Por cada pregunta que este repondida se multiplica 10 por el
                   numero de la pregunta

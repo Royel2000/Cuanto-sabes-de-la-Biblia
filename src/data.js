@@ -2,9 +2,10 @@ export const categories = {
   antiguo: "antiguo",
   nuevo: "nuevo",
   conferencia: "conferencia",
+  expert: "expert"
 };
 
-const { antiguo, nuevo, conferencia } = categories;
+const { antiguo, nuevo, conferencia, expert } = categories;
 
 export const questions = [
   //antiguo testamento
@@ -575,5 +576,151 @@ export const questions = [
     public: [40, 30, 20, 10],
     info: "",
     bible: "Números 16:31-33",
+  },
+
+  // Preguntas para expertos en la biblia
+  {
+    id: 300,
+    difficulty: "Muy Dificil",
+    category: expert,
+    question:
+      "¿Cómo se llama la famosa ciudad que está situada a 8 kilometros de Jerusalén?",
+    correct_answer: "Belén",
+    incorrect_answers: ["Judea", "Egipto", "Damazco"],
+    public: [30, 40, 10, 20],
+    info: "",
+    bible: "",
+  },
+  {
+    id: 301,
+    difficulty: "Muy Dificil",
+    category: expert,
+    question:
+      "¿Qué libro nos relata la reedificación de los muros de Jerusalén?",
+    correct_answer: "Nehemías",
+    incorrect_answers: ["Ester", "Esdras", "Isaías"],
+    public: [40, 40, 10, 10],
+    info: "",
+    bible: "",
+  },
+  {
+    id: 302,
+    difficulty: "Muy Dificil",
+    category: expert,
+    question:
+      "¿Cómo se llama el caudillo que sacrificó su hija en cumplimiento de su voto a Dios?",
+    correct_answer: "Jefté",
+    incorrect_answers: ["Joacaz", "Obed", "Ninguno"],
+    public: [30, 5, 20, 60],
+    info: "",
+    bible: "Jueces 11:31-40",
+  },
+  {
+    id: 303,
+    difficulty: "Dificil",
+    category: expert,
+    question:
+      "¿A qué mujer amó Jacob? y ¿Cuánto tiempo trabajo por ella?",
+    correct_answer: "Raquel, 7 años",
+    incorrect_answers: ["Lea, 7 años", "Raquel, 12 años", "Lea, 12 años"],
+    public: [10, 20, 50, 20],
+    info: "",
+    bible: "Génesis 29:18-20",
+  },
+  {
+    id: 304,
+    difficulty: "Muy Dificil",
+    category: expert,
+    question:
+      "¿Qué profeta fue sacado de una cisterna con trapos viejos y ropas raídas y andrajosas?",
+    correct_answer: "Jeremías",
+    incorrect_answers: ["Elías", "Isaías", "Eliseo"],
+    public: [20, 10, 60, 10],
+    info: "",
+    bible: "Jeremías 38:10-13",
+  },
+  {
+    id: 305,
+    difficulty: "Muy Dificil",
+    category: expert,
+    question:
+      "¿Cuál es el rio mas largo de Palestina?",
+    correct_answer: "El Jordán",
+    incorrect_answers: ["El Eufrates", "El rio Nílo", "El Tigris"],
+    public: [10, 10, 10, 10],
+    info: "",
+    bible: "",
+  },
+  {
+    id: 306,
+    difficulty: "Dificil",
+    category: expert,
+    question:
+      "¿Cuál fue el otro nombre de Mateo?",
+    correct_answer: "Leví",
+    incorrect_answers: ["Simeón", "José", "Marcos"],
+    public: [30, 40, 10, 20],
+    info: "",
+    bible: "Mateo 9:9, Marcos 2:14",
+  },
+  {
+    id: 307,
+    difficulty: "Dificil",
+    category: expert,
+    question:
+      '¿Quién dijo "Tú eres aquel hombre"?',
+    correct_answer: "Natán a David",
+    incorrect_answers: ["La samaritana a Jesús", "Samuel a David", "Jesús a Pedro"],
+    public: [30, 30, 30, 10],
+    info: "",
+    bible: "2 Samuel 12:17",
+  },
+  {
+    id: 308,
+    difficulty: "Muy Dificil",
+    category: expert,
+    question:
+      "¿Qúe ciudad Europea fue la primera en oír la predicación del evangelio?",
+    correct_answer: "Filipos",
+    incorrect_answers: ["Tesalónica", "Grécia", "Pergamo"],
+    public: [20, 50, 10, 20],
+    info: "",
+    bible: "Hechos 16:12",
+  },
+  {
+    id: 309,
+    difficulty: "Muy Dificil",
+    category: expert,
+    question:
+      "¿En qué libro de la biblia se encuentra la famosa descripción del poder de la lengua?",
+    correct_answer: "Santiago",
+    incorrect_answers: ["Hechos", "Tesalonisenses", "Corintios"],
+    public: [20, 40, 35, 15],
+    info: "",
+    bible: "Santiago 3:1-18",
+  },
+  {
+    id: 310,
+    difficulty: "Muy Dificil",
+    category: expert,
+    question:
+      "¿Qué salmo escribió Moisés?",
+    correct_answer: "Salmo 90",
+    incorrect_answers: ["Samo 100", "Salmo 24", "Salmo 109"],
+    public: [10, 10, 10, 10],
+    info: "",
+    bible: "",
+  },
+  {
+    id: 311,
+    difficulty: "Muy Dificil",
+    category: expert,
+    question:
+      "¿Con qué compara el salmista una familia numerosa?",
+    correct_answer: "Una aljaba de flechas",
+    incorrect_answers: ["Una aljaba", "La arena del mar", "Saeta"],
+    public: [10, 10, 10, 10],
+    info: "",
+    bible: "",
   },
 ];

@@ -3,15 +3,15 @@
 }
 
 .step {
-    @apply w-10 h-10 flex relative dark:bg-zinc-800 bg-zinc-300 rounded-full font-semibold text-green-400 transition-all;
+    @apply md:w-10 md:h-10 flex relative dark:bg-zinc-800 bg-zinc-300 rounded-full font-semibold text-green-400 transition-all;
 }
 
 .active .step {
-    @apply dark:bg-red-500 bg-zinc-300 transition-all z-10;
+    @apply dark:bg-zinc-600 bg-zinc-300 transition-all z-10;
 }
 
 .complete .step {
-    @apply bg-zinc-300 shadow-md shadow-zinc-500 transition-all;
+    @apply bg-zinc-300 shadow-md shadow-zinc-500 transition-all duration-1000;
 }
 
 .complete p {

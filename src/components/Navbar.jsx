@@ -22,7 +22,7 @@ const Navbar = () => {
 
   return (
     <div className="flex">
-      <div className="w-full py-2 top-0 bg-zinc-100 dark:bg-zinc-900 dark:bg-opacity-[50%] backdrop-blur z-50 px-10 flex dark:text-white  transition-all duration-1000">
+      <div className="w-full py-2 top-0 backdrop-blur z-50 px-10 flex dark:text-white  transition-all">
         <div className="w-full flex flex-row justify-between items-center px-[10px]">
           <Link
             to="/"
@@ -30,17 +30,17 @@ const Navbar = () => {
           >
             <img
               src="/assets/icons/logotemplo.png"
-              className="cursor-pointer hover:animate-pulse w-[3rem] mr-6"
+              className="cursor-pointer hover:animate-pulse w-[4rem] mr-6"
             />
             <div>
-              <h1 className="text-2xl">50x10 Biblico</h1>
-              <p>Cuanto sabes de la biblia</p>
+              <h1 className="font-bold sm:text-2xl transition-all">Quiz Biblico</h1>
+              <p>¿Cuánto sabes de la biblia?</p>
             </div>
           </Link>
           <div>
             <button
               onClick={handleChangeTheme}
-              className="dark:bg-opacity-30 dark:bg-zinc-600 p-1 bg-zinc-300 rounded-full  transition-all duration-1000"
+              className="dark:bg-opacity-30 dark:bg-zinc-600 p-1 bg-zinc-300 rounded-full  transition-all"
             >
               {theme == "light" ? (
                 <svg

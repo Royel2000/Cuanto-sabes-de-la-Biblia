@@ -23,7 +23,7 @@ const Modal = ({ open, children, onClose }) => {
 
           {/* Contenedor del modal */}
           <motion.div
-            className="relative z-10 overflow-hidden bg-zinc-100 dark:bg-zinc-900 rounded-xl text-left shadow-2xl shadow-slate-900 border border-zinc-600 w-[90%] max-w-lg"
+            className="relative z-10 overflow-hidden bg-zinc-100 dark:bg-slate-900 rounded-xl text-left shadow-2xl shadow-slate-900 border border-slate-800 dark:bg-opacity-[20%] backdrop-blur w-[90%] max-w-lg"
             initial={{ scale: 0.9, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             exit={{ scale: 0.9, opacity: 0 }}
@@ -32,10 +32,10 @@ const Modal = ({ open, children, onClose }) => {
           >
             <TopButtons />
             <div>{children}</div>
-            <div className="bg-zinc-300 dark:bg-zinc-800 px-4 py-3 sm:flex sm:flex-row-reverse sm:px-6">
+            <div className="bg-zinc-300 dark:bg-slate-800 dark:bg-opacity-[20%] backdrop-blur px-4 py-3 sm:flex sm:flex-row-reverse sm:px-6">
               <button
                 type="button"
-                className="mt-3 inline-flex w-full justify-center rounded-[5px] dark:bg-slate-300 px-3 py-2 text-sm font-semibold text-zinc-900 shadow-sm ring-1 ring-inset ring-zinc-300 hover:bg-zinc-50 sm:mt-0 sm:w-auto"
+                className="mt-3 inline-flex w-full justify-center rounded-[5px] dark:bg-slate-300 px-3 py-2 text-sm font-semibold text-slate-900 shadow-sm ring-1 ring-inset ring-slate-300 hover:bg-slate-50 sm:mt-0 sm:w-auto"
                 onClick={onClose}
               >
                 Salir

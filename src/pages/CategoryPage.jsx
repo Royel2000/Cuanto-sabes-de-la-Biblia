@@ -47,7 +47,7 @@ const CategoryPage = () => {
         animate={{ opacity: 1, y: 0 }}
         exit={{ opacity: 0, y: -10 }}
         transition={{ duration: 0.6 }}
-        className="md:flex mt-32 text-center justify-center"
+        className="md:flex text-center justify-center"
       >
         {activeQuiz ? (
           <Question
@@ -89,10 +89,10 @@ const CategoryPage = () => {
             />
 
             <motion.button
-              className={`text-5xl dark:text-white p-2 rounded-2xl font-bold transition-all ${
+              className={`text-5xl dark:text-white p-2 md:p-5 rounded lg:rounded-2xl font-bold transition-all ${
                 loading
                   ? "opacity-50 cursor-not-allowed"
-                  : "hover:bg-zinc-400 dark:hover:bg-zinc-900"
+                  : "bg-slate-900 hover:bg-slate-400 dark:hover:bg-slate-800 shadow-2xl dark:hover:shadow-slate-700 transition-all duration-500"
               }`}
               whileHover={!loading ? { scale: 1.05 } : {}}
               whileTap={{ scale: 0.95 }}

@@ -10,21 +10,27 @@ const Question = ({
   setIndexQuestion,
   setActiveQuiz,
 }) => {
-  let [score, setScore] = useState(0);
+  const [score, setScore] = useState(0);
   const [selectAnswerIndex, setSelectAnswerIndex] = useState(null);
   const [answered, setAnswered] = useState(false);
   const [answerRandom, setAnswerRandom] = useState([]);
   const [answers, setAnswers] = useState([]);
   const [answerPercent, setAnswerPercent] = useState([]);
   const [activeResults, setActiveResults] = useState(false);
-  const [time, setTime] = useState(false);
-
 
   const [currentStep, setCurrentStep] = useState(1);
   const steps = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10"];
 
-  //? control de la visivilidad
-  const [visible, setVisible] = useState(true);
+  const [timeLeft, setTimeLeft] = useState(10);
+
+  function shuffle(array) {
+    const newArray = [...array];
+    for (let i = newArray.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [newArray[i], newArray[j]] = [newArray[j], newArray[i]];
+    }
+    return newArray;
+  }
 
   useEffect(() => {
     const answers = [
@@ -36,7 +42,25 @@ const Question = ({
     playSound("/assets/music/transition.mp3");
     setAnswerPercent(percent);
     setAnswers(answers);
-    setAnswerRandom(answers.sort(() => Math.random() - 0.1));
+
+    const shuffled = shuffle(answers);
+    setAnswerRandom(shuffled);
+
+    setTimeLeft(15); // reinicia el tiempo
+
+    const timer = setInterval(() => {
+      setTimeLeft((prev) => {
+        if (prev <= 1) {
+          clearInterval(timer);
+          setAnswered(true);
+          setSelectAnswerIndex(null);
+          return 0;
+        }
+        return prev - 1;
+      });
+    }, 1000);
+
+    return () => clearInterval(timer);
   }, [filteredQuestion]);
 
   const playSound = (url) => {
@@ -65,9 +89,9 @@ const Question = ({
   };
 
   const onReset = () => {
-    setScore = 0;
+    setScore(0);
     setActiveQuiz(false);
-    setIndexQuestion = 0;
+    setIndexQuestion(0);
   };
 
   return (
@@ -82,8 +106,8 @@ const Question = ({
           <div>
             {activeResults ? (
               <div
-                className="flex flex-col justify-evenly items-center shadow-xl rounded-2xl md:w-[600px] h-full gap-5 bg-zinc-100
-              dark:bg-black borderborder-zinc-100  dark:text-zinc-400 transition-all p-10 mt-2 sm:mt-0"
+                className="flex flex-col justify-between shadow-xl rounded-xl border border-slate-200 dark:border-slate-800  backdrop-blur-xl
+              dark:bg-slate-800 dark:bg-opacity-[30%] md:w-[600px] md:h-[600px] lg:h-[650px] lg:w-[900px] lg:mx-2 p-10 dark:text-white transition-all duration-1000"
               >
                 <motion.div
                   initial={{ opacity: 0, y: 10 }}
@@ -92,24 +116,24 @@ const Question = ({
                 >
                   <img
                     src={` ${
-                      (score / questionFiltered.length) * 100 <= 50
+                      (score / questionFiltered.length) * 100 <= 90
                         ? "/assets/video/gameover.gif"
-                        : ""
+                        : "/assets/video/Winner.gif"
                     } `}
                     alt=""
                   />
                 </motion.div>
                 <div className="flex flex-col gap-2 text-center text-lg font-bold ">
                   <span>Acertaste</span>
-                  <span className="font-bold text-6xl bg-gradient-to-tl from-zinc-500 to-zinc-100 bg-clip-text delay-200 text-transparent">
+                  <span className="font-bold text-6xl bg-gradient-to-tl from-slate-500 to-slate-100 bg-clip-text delay-200 text-transparent">
                     {((score / questionFiltered.length) * 100).toFixed(0)} pt
                   </span>
                   ({score} de {questionFiltered.length})
                   <span>{score * 10} puntos</span>
                   <Link to={`/`}>
                     <button
-                      className="dark:text-zinc-100 rounded-xl px-5 py-2 hover:bg-zinc-200 dark:hover:bg-zinc-100 hover:text-black 
-                      font-medium hover:shadow-zinc-100/50 dark:bg-zinc-600 shadow-xl transition-all"
+                      className="dark:text-slate-100 rounded-xl px-5 py-2 hover:bg-slate-200 dark:hover:bg-slate-100 hover:text-black 
+                      font-medium hover:shadow-slate-100/50 dark:bg-slate-600 shadow-xl transition-all"
                       onMouseEnter={() => playSound("/assets/music/hover.mp3")}
                       onClick={() => onReset()}
                     >
@@ -120,14 +144,14 @@ const Question = ({
               </div>
             ) : (
               <div
-                className="flex flex-col  justify-between shadow-xl rounded-xl border border-zinc-200 dark:border-zinc-900  backdrop-blur-xl
-              dark:bg-zinc-950 dark:bg-opacity-[50%] md:w-[600px] md:h-[600px] p-10 dark:text-white transition-all duration-1000"
+                className="flex flex-col m-3 sm:m-0 md:mt-0 shadow-xl rounded-xl border border-slate-200 dark:border-slate-800  backdrop-blur-xl
+              dark:bg-slate-900 dark:bg-opacity-[30%] md:w-[600px] md:h-[600px] lg:h-[650px] lg:w-[700px] xl:h-[650px] xl:w-[900px] lg:mx-2 p-10 dark:text-white transition-all duration-1000"
               >
-                <div className="flex justify-between">
+                <div className="flex justify-between mb-4">
                   <p className="text-xl font-bold">
                     {indexQuestion + 1} / {questionFiltered.length}
                   </p>
-                  <div className="flex gap-2">
+                  <div className="flex">
                     <AnimatePresence mode="wait">
                       <p className="font-semibold">Dificultad: </p>
                       <motion.p
@@ -135,14 +159,14 @@ const Question = ({
                         animate={{ opacity: 1, y: 0 }}
                         exit={{ opacity: 0, y: -20 }}
                         transition={{ duration: 0.5 }}
-                        className={`font-bold hover:text-transparent hover:bg-gradient-to-br dark:hover:from-zinc-700 hover:from-zinc-100 dark:hover:to-zinc-50 hover:to-zinc-500 hover:bg-clip-text  transition-all duration-1000 ${
+                        className={`font-bold hover:text-transparent bg-gradient-to-br dark:hover:from-slate-700 hover:from-slate-100 dark:hover:to-slate-50 hover:to-slate-500 bg-clip-text  transition-all duration-1000 ${
                           filteredQuestion.difficulty == "Medio"
-                            ? "text-amber-400"
+                            ? "from-amber-400 to-amber-700 text-amber-500 transition-all"
                             : filteredQuestion.difficulty == "Muy Dificil"
-                            ? "text-purple-500"
+                            ? "from-purple-400 to-purple-700 text-purple-500 transition-all"
                             : filteredQuestion.difficulty == "Dificil"
-                            ? "text-red-500"
-                            : "text-green-500"
+                            ? "from-red-400 to-red-700 text-red-500 transition-all"
+                            : "from-green-400 to-green-700 text-green-500 transition-all"
                         }`}
                       >
                         {filteredQuestion.difficulty}
@@ -159,7 +183,23 @@ const Question = ({
                       exit={{ opacity: 0, y: -20 }}
                       transition={{ duration: 0.5 }}
                     >
-                      <h1 className={`text-[25px] text-center transition-all`}>
+                      <div className="w-full h-2 bg-zinc-200 dark:bg-slate-800 rounded-full overflow-hidden mb-10">
+                        <motion.div
+                          initial={{ width: "100%" }}
+                          animate={{ width: `${(timeLeft / 10) * 100}%` }}
+                          transition={{ duration: 1, ease: "linear" }}
+                          className={`h-full transition-all ${
+                            timeLeft >= 5
+                              ? "bg-green-500"
+                              : timeLeft >= 2
+                              ? "bg-yellow-500"
+                              : "bg-red-500"
+                          }`}
+                        />
+                      </div>
+                      <h1
+                        className={`text-[25px] md:text-[30px] lg:text-[39px] text-center my-5 transition-all`}
+                      >
                         {filteredQuestion.question}
                       </h1>
                       <p>{filteredQuestion.info}</p>
@@ -169,21 +209,16 @@ const Question = ({
                 <div className="grid md:grid-cols-2 gap-5">
                   {answerRandom.map((answer, index) => (
                     <motion.button
-                      initial={{ opacity: 0, y: 20 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      transition={{ delay: index * 0.1 }}
-                      whileTap={{ scale: 0.95 }}
+                      transition={{ duration: 0.01, ease: "linear" }}
+                      whileTap={{ scale: 1.0 }}
                       whileHover={{ scale: 1.05 }}
-                      className={`p-5 rounded flex border hover:bg-zinc-300 border-zinc-300 dark:border-zinc-800 dark:hover:bg-zinc-700 dark:hover:shadow-zinc-950 
-                      justify-center items-center hover:scale-105 transition-all ease-in duration-300 delay-75 ${
+                      className={`p-5 rounded flex  border hover:bg-slate-300 border-slate-300 dark:border-slate-800 dark:hover:bg-slate-700 dark:hover:shadow-slate-950 
+                      justify-center items-center hover:scale-105 transition-all md:text-2xl ease-in duration-300 delay-75 ${
                         selectAnswerIndex !== null &&
                         index === selectAnswerIndex
                           ? answer === filteredQuestion.correct_answer
                             ? "bg-green-500"
-                            : `bg-red-500 ${setTimeout(() => {
-                                setActiveResults(true);
-                                setAnswered(false);
-                              }, 4000)}`
+                            : "bg-red-500"
                           : ""
                       }`}
                       onMouseEnter={() => playSound("/assets/music/hover.mp3")}
@@ -197,8 +232,8 @@ const Question = ({
                 </div>
                 {indexQuestion + 1 === questionFiltered.length ? (
                   <button
-                    className="dark:bg-zinc-700 dark:text-zinc-300 rounded-xl md:px-10 py-2 hover:bg-zinc-400 dark:hover:bg-zinc-200 hover:text-black font-medium 
-                    dark:hover:shadow-zinc-950 hover:shadow-zinc-500 shadow-xl flex justify-center transition ease-in-out duration-1000 delay-75"
+                    className="dark:bg-slate-700 dark:text-slate-300 rounded-xl md:px-10 py-2 hover:bg-slate-400 dark:hover:bg-slate-200 hover:text-black font-medium 
+                    dark:hover:shadow-slate-950 hover:shadow-slate-500 shadow-xl md:flex md:justify-center transition ease-in-out duration-1000 delay-75 mt-10"
                     onClick={() => {
                       playSound("/assets/music/click.mp3");
                       setAnswered(false);
@@ -209,26 +244,14 @@ const Question = ({
                   </button>
                 ) : (
                   <button
-                    className=" dark:bg-zinc-700 dark:text-zinc-300 rounded-xl md:px-10 py-2 hover:bg-zinc-400 dark:hover:bg-zinc-200 hover:text-black font-medium 
-                    dark:hover:shadow-zinc-950 hover:shadow-zinc-500 shadow-xl flex justify-between transition ease-in-out duration-1000 delay-75"
+                    className=" dark:bg-slate-700 dark:text-slate-300 rounded-xl px-10 py-2 text-center hover:bg-slate-400 dark:hover:bg-slate-200 hover:text-black font-medium 
+                    dark:hover:shadow-slate-950 hover:shadow-slate-500 shadow-xl md:flex md:justify-between transition ease-in-out duration-1000 delay-75 mt-10"
                     onClick={() => {
                       playSound("/assets/music/click.mp3");
                       onNextQuestion();
                     }}
                   >
-                    siguiente{" "}
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      viewBox="0 0 24 24"
-                      fill="currentColor"
-                      className="w-6 h-6"
-                    >
-                      <path
-                        fillRule="evenodd"
-                        d="M19.916 4.626a.75.75 0 0 1 .208 1.04l-9 13.5a.75.75 0 0 1-1.154.114l-6-6a.75.75 0 0 1 1.06-1.06l5.353 5.353 8.493-12.74a.75.75 0 0 1 1.04-.207Z"
-                        clipRule="evenodd"
-                      />
-                    </svg>
+                    <p>siguiente</p>
                   </button>
                 )}
               </div>
@@ -236,7 +259,7 @@ const Question = ({
           </div>
         </div>
         <div>
-          <div className="dark:text-white flex justify-between mt-10">
+          <div className="dark:text-zinc-400 flex justify-between mt-10">
             {steps?.map((step, i) => (
               <motion.div
                 key={i}
@@ -248,7 +271,7 @@ const Question = ({
                 }`}
               >
                 <div className="step"></div>
-                <p>${step * 10}</p>
+                <p>{step * 10}</p>
               </motion.div>
             ))}
           </div>
