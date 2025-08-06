@@ -2,7 +2,7 @@ export const categories = {
   antiguo: "antiguo",
   nuevo: "nuevo",
   conferencia: "conferencia",
-  expert: "expert"
+  expert: "expert",
 };
 
 const { antiguo, nuevo, conferencia, expert } = categories;
@@ -345,6 +345,8 @@ export const questions = [
     info: "",
     bible: "2 Cor 12:8",
   },
+  
+  // conferencia de jovenes
   {
     id: 200,
     difficulty: "Medio",
@@ -501,32 +503,15 @@ export const questions = [
     id: 213,
     difficulty: "Dificil",
     category: conferencia,
-    question:
-      "¿Qué discípulo casi muere por su descuido al quedarse dormido durante una enseñanza?",
-    correct_answer: "Eutico",
-    incorrect_answers: ["Tito", "Timoteo", "Esteban"],
-    public: [20, 20, 30, 30],
+    question: "¿Cómo se llamaba el hijo que sustituyó a su hermano Abel?",
+    correct_answer: "Set",
+    incorrect_answers: ["Sem", "Eliú", "Jafet"],
+    public: [40, 40, 10, 10],
     info: "",
-    bible: "Hechos 20:9",
+    bible: "Génesis 4:25",
   },
   {
     id: 214,
-    difficulty: "Dificil",
-    category: conferencia,
-    question:
-      "¿Quién fue consumido repentinamente por mentir al Espíritu Santo y no tuvo una segunda oportunidad?",
-    correct_answer: "Ananías y Safira",
-    incorrect_answers: [
-      "Simón el Mago",
-      "Elí y sus hijos",
-      "Saúl y su escudero",
-    ],
-    public: [60, 10, 20, 10],
-    info: "",
-    bible: "Hechos 5:1-10",
-  },
-  {
-    id: 215,
     difficulty: "Dificil",
     category: conferencia,
     question:
@@ -542,7 +527,7 @@ export const questions = [
     bible: "Génesis 19:26",
   },
   {
-    id: 216,
+    id: 215,
     difficulty: "Dificil",
     category: conferencia,
     question:
@@ -554,7 +539,7 @@ export const questions = [
     bible: "Hechos 12:21-23",
   },
   {
-    id: 217,
+    id: 216,
     difficulty: "Dificil",
     category: conferencia,
     question:
@@ -566,7 +551,7 @@ export const questions = [
     bible: "Hechos 20:9-10",
   },
   {
-    id: 218,
+    id: 217,
     difficulty: "Dificil",
     category: conferencia,
     question:
@@ -576,6 +561,107 @@ export const questions = [
     public: [40, 30, 20, 10],
     info: "",
     bible: "Números 16:31-33",
+  },
+  {
+    id: 218,
+    difficulty: "Medio",
+    category: conferencia,
+    question: "¿A qué ciudad fue trasladado Daniel y sus amigos?",
+    correct_answer: "Babilonia",
+    incorrect_answers: ["Roma", "Juda", "Ciria"],
+    public: [30, 30, 10, 30],
+    info: "",
+    bible: "Daniel 1:1",
+  },
+  {
+    id: 219,
+    difficulty: "Dificil",
+    category: conferencia,
+    question: "¿Quién fue hombre que vivió más años en la Biblia?",
+    correct_answer: "Matusalén",
+    incorrect_answers: ["Manasés", "Nabucodonosor", "Adán"],
+    public: [40, 30, 20, 10],
+    info: "",
+    bible: "Génesis 5:27",
+  },
+  {
+    id: 220,
+    difficulty: "Dificil",
+    category: conferencia,
+    question: "¿Quién dijo soy tardo en habla y torpe en lengua?",
+    correct_answer: "Moisés",
+    incorrect_answers: ["Arón", "Abraham", "Saulo"],
+    public: [40, 30, 20, 10],
+    info: "",
+    bible: "Éxodo 4:10",
+  },
+  {
+    id: 221,
+    difficulty: "Dificil",
+    category: conferencia,
+    question: "¿Quién fué el padre de Noé?",
+    correct_answer: "Laméc",
+    incorrect_answers: ["Matusalén", "Moisés", "Adan"],
+    public: [40, 30, 20, 10],
+    info: "",
+    bible: "Génesis 5:28",
+  },
+  {
+    id: 222,
+    difficulty: "Dificil",
+    category: conferencia,
+    question:
+      "¿Por cuánto tiempo los Israelitas comieron el maná en el desierto?",
+    correct_answer: "40 años",
+    incorrect_answers: ["20 años", "70 años", "10 años"],
+    public: [40, 30, 20, 10],
+    info: "",
+    bible: "Éxodo 16:35",
+  },
+  {
+    id: 223,
+    difficulty: "Medio",
+    category: conferencia,
+    question: "¿De qué namera murió Esteban?",
+    correct_answer: "Apedreado",
+    incorrect_answers: ["Ahogado", "Golpeado", "Envenenado"],
+    public: [40, 30, 10, 20],
+    info: "",
+    bible: "Hechos 7:58",
+  },
+  {
+    id: 224,
+    difficulty: "Dificil",
+    category: conferencia,
+    question: "¿Qué hombre de la Biblia sufria de dolor estomacal?",
+    correct_answer: "Timoteo",
+    incorrect_answers: ["Saulo", "Tito", "Job"],
+    public: [40, 30, 20, 10],
+    info: "",
+    bible: "1 timoteo 5:23",
+  },
+  {
+    id: 225,
+    difficulty: "Dificil",
+    category: conferencia,
+    question:
+      "¿Quién dijo: 'Porque para mi el vivir es Cristo y el morir es ganancia'?",
+    correct_answer: "Pablo",
+    incorrect_answers: ["Pedro", "Santiago", "Esteban"],
+    public: [40, 30, 20, 10],
+    info: "",
+    bible: "Filipenses 1:21",
+  },
+  {
+    id: 226,
+    difficulty: "Dificil",
+    category: conferencia,
+    question: "¿Cómo se llamaba el padre del profeta Jonás?",
+    correct_answer: "Amitai",
+    incorrect_answers: ["Us", "Pedro", "Amisai"],
+    public: [40, 10, 20, 40],
+    info: "",
+    bible: "Filipenses 1:21",
   },
 
   // Preguntas para expertos en la biblia
@@ -619,8 +705,7 @@ export const questions = [
     id: 303,
     difficulty: "Dificil",
     category: expert,
-    question:
-      "¿A qué mujer amó Jacob? y ¿Cuánto tiempo trabajo por ella?",
+    question: "¿A qué mujer amó Jacob? y ¿Cuánto tiempo trabajo por ella?",
     correct_answer: "Raquel, 7 años",
     incorrect_answers: ["Lea, 7 años", "Raquel, 12 años", "Lea, 12 años"],
     public: [10, 20, 50, 20],
@@ -643,8 +728,7 @@ export const questions = [
     id: 305,
     difficulty: "Muy Dificil",
     category: expert,
-    question:
-      "¿Cuál es el rio mas largo de Palestina?",
+    question: "¿Cuál es el rio mas largo de Palestina?",
     correct_answer: "El Jordán",
     incorrect_answers: ["El Eufrates", "El rio Nílo", "El Tigris"],
     public: [10, 10, 10, 10],
@@ -655,8 +739,7 @@ export const questions = [
     id: 306,
     difficulty: "Dificil",
     category: expert,
-    question:
-      "¿Cuál fue el otro nombre de Mateo?",
+    question: "¿Cuál fue el otro nombre de Mateo?",
     correct_answer: "Leví",
     incorrect_answers: ["Simeón", "José", "Marcos"],
     public: [30, 40, 10, 20],
@@ -667,10 +750,13 @@ export const questions = [
     id: 307,
     difficulty: "Dificil",
     category: expert,
-    question:
-      '¿Quién dijo "Tú eres aquel hombre"?',
+    question: '¿Quién dijo "Tú eres aquel hombre"?',
     correct_answer: "Natán a David",
-    incorrect_answers: ["La samaritana a Jesús", "Samuel a David", "Jesús a Pedro"],
+    incorrect_answers: [
+      "La samaritana a Jesús",
+      "Samuel a David",
+      "Jesús a Pedro",
+    ],
     public: [30, 30, 30, 10],
     info: "",
     bible: "2 Samuel 12:17",
@@ -703,8 +789,7 @@ export const questions = [
     id: 310,
     difficulty: "Muy Dificil",
     category: expert,
-    question:
-      "¿Qué salmo escribió Moisés?",
+    question: "¿Qué salmo escribió Moisés?",
     correct_answer: "Salmo 90",
     incorrect_answers: ["Samo 100", "Salmo 24", "Salmo 109"],
     public: [10, 10, 10, 10],
@@ -715,8 +800,7 @@ export const questions = [
     id: 311,
     difficulty: "Muy Dificil",
     category: expert,
-    question:
-      "¿Con qué compara el salmista una familia numerosa?",
+    question: "¿Con qué compara el salmista una familia numerosa?",
     correct_answer: "Una aljaba de flechas",
     incorrect_answers: ["Una aljaba", "La arena del mar", "Saeta"],
     public: [10, 10, 10, 10],

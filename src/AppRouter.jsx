@@ -6,7 +6,7 @@ import Instructions from "./pages/Instructions";
 
 const AppRouter = () => {
   return (
-    <div class="">
+    <div>
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
