@@ -46,7 +46,7 @@ const Question = ({
     const shuffled = shuffle(answers);
     setAnswerRandom(shuffled);
 
-    setTimeLeft(15); // reinicia el tiempo
+    setTimeLeft(20); // reinicia el tiempo
 
     const timer = setInterval(() => {
       setTimeLeft((prev) => {
@@ -82,7 +82,7 @@ const Question = ({
   };
 
   const onNextQuestion = () => {
-    playSound("/assets/music/next.mp3");
+    playSound("/assets/music/click.mp3");
     setIndexQuestion(indexQuestion + 1);
     setSelectAnswerIndex(null);
     setAnswered(false);
@@ -152,7 +152,6 @@ const Question = ({
                     {indexQuestion + 1} / {questionFiltered.length}
                   </p>
                   <div className="flex">
-                    <AnimatePresence mode="wait">
                       <p className="font-semibold">Dificultad: </p>
                       <motion.p
                         initial={{ opacity: 0, y: 20 }}
@@ -171,11 +170,9 @@ const Question = ({
                       >
                         {filteredQuestion.difficulty}
                       </motion.p>
-                    </AnimatePresence>
                   </div>
                 </div>
                 <div className="transition-all">
-                  <AnimatePresence mode="wait">
                     <motion.div
                       key={indexQuestion}
                       initial={{ opacity: 0, y: 20 }}
@@ -186,7 +183,7 @@ const Question = ({
                       <div className="w-full h-2 bg-zinc-200 dark:bg-slate-800 rounded-full overflow-hidden mb-10">
                         <motion.div
                           initial={{ width: "100%" }}
-                          animate={{ width: `${(timeLeft / 10) * 100}%` }}
+                          animate={{ width: `${(timeLeft / 20) * 100}%` }}
                           transition={{ duration: 1, ease: "linear" }}
                           className={`h-full transition-all ${
                             timeLeft >= 5
@@ -204,7 +201,6 @@ const Question = ({
                       </h1>
                       <p>{filteredQuestion.info}</p>
                     </motion.div>
-                  </AnimatePresence>
                 </div>
                 <div className="grid md:grid-cols-2 gap-5">
                   {answerRandom.map((answer, index) => (
@@ -247,7 +243,6 @@ const Question = ({
                     className=" dark:bg-slate-700 dark:text-slate-300 rounded-xl px-10 py-2 text-center hover:bg-slate-400 dark:hover:bg-slate-200 hover:text-black font-medium 
                     dark:hover:shadow-slate-950 hover:shadow-slate-500 shadow-xl md:flex md:justify-between transition ease-in-out duration-1000 delay-75 mt-10"
                     onClick={() => {
-                      playSound("/assets/music/click.mp3");
                       onNextQuestion();
                     }}
                   >
