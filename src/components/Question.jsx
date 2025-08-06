@@ -76,6 +76,7 @@ const Question = ({
       setCurrentStep((prev) => prev + 1);
     } else {
       playSound("/assets/music/wrong.mp3");
+      setActiveResults(true);
     }
     setSelectAnswerIndex(index);
     setAnswered(true);
