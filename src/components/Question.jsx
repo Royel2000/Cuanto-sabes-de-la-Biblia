@@ -39,7 +39,7 @@ const Question = ({
     ];
     const percent = [...filteredQuestion.public];
 
-    playSound("/assets/music/transition.mp3");
+    playSound("./assets/music/transition.mp3");
     setAnswerPercent(percent);
     setAnswers(answers);
 
@@ -71,11 +71,11 @@ const Question = ({
 
   const checkAnswer = (answerText, index) => {
     if (answerText === filteredQuestion.correct_answer) {
-      playSound("/assets/music/correct.mp3");
+      playSound("./assets/music/correct.mp3");
       setScore(score + 1);
       setCurrentStep((prev) => prev + 1);
     } else {
-      playSound("/assets/music/wrong.mp3");
+      playSound("./assets/music/wrong.mp3");
       setActiveResults(true);
     }
     setSelectAnswerIndex(index);
@@ -83,7 +83,7 @@ const Question = ({
   };
 
   const onNextQuestion = () => {
-    playSound("/assets/music/click.mp3");
+    playSound("./assets/music/click.mp3");
     setIndexQuestion(indexQuestion + 1);
     setSelectAnswerIndex(null);
     setAnswered(false);
@@ -118,8 +118,8 @@ const Question = ({
                   <img
                     src={` ${
                       (score / questionFiltered.length) * 100 <= 90
-                        ? "/assets/video/gameover.gif"
-                        : "/assets/video/Winner.gif"
+                        ? "./assets/video/gameover.gif"
+                        : "./assets/video/Winner.gif"
                     } `}
                     alt=""
                   />
@@ -135,7 +135,7 @@ const Question = ({
                     <button
                       className="dark:text-slate-100 rounded-xl px-5 py-2 hover:bg-slate-200 dark:hover:bg-slate-100 hover:text-black 
                       font-medium hover:shadow-slate-100/50 dark:bg-slate-600 shadow-xl transition-all"
-                      onMouseEnter={() => playSound("/assets/music/hover.mp3")}
+                      onMouseEnter={() => playSound("public/assets/music/hover.mp3")}
                       onClick={() => onReset()}
                     >
                       volver
@@ -218,7 +218,7 @@ const Question = ({
                             : "bg-red-500"
                           : ""
                       }`}
-                      onMouseEnter={() => playSound("/assets/music/hover.mp3")}
+                      onMouseEnter={() => playSound("./assets/music/hover.mp3")}
                       key={answer}
                       onClick={() => checkAnswer(answer, index)}
                       disabled={answered && selectAnswerIndex !== index}
@@ -232,7 +232,7 @@ const Question = ({
                     className="dark:bg-slate-700 dark:text-slate-300 rounded-xl md:px-10 py-2 hover:bg-slate-400 dark:hover:bg-slate-200 hover:text-black font-medium 
                     dark:hover:shadow-slate-950 hover:shadow-slate-500 shadow-xl md:flex md:justify-center transition ease-in-out duration-1000 delay-75 mt-10"
                     onClick={() => {
-                      playSound("/assets/music/click.mp3");
+                      playSound("./assets/music/click.mp3");
                       setAnswered(false);
                       setActiveResults(true);
                     }}

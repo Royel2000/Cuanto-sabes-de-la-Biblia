@@ -42,9 +42,9 @@ const CategoryList = () => {
             whileTap={{ scale: 0.7 }}
           >
             <Link
-              onMouseEnter={() => playSound("/assets/music/hover.mp3")}
+              onMouseEnter={() => playSound("./assets/music/hover.mp3")}
               onClick={() => {
-                playSound("/assets/music/click.mp3");
+                playSound("./assets/music/click.mp3");
               }}
               to={cat.path}
               className="flex flex-col text-center  transition-all duration-1000"
